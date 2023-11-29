@@ -34,11 +34,21 @@ public class testSelectionSort {
         assertArrayEquals(expected, actual);
     }
     
-    public void testMixed(){
-        
+	@Test
+    public void testMixed() {
+        int[] actual = {3, -1, 0, -2, 5};
+        int[] expected = {-2, -1, 0, 3, 5};
+        SelectionSort sorter = new SelectionSort();
+        actual = sorter.basicSelectionSort(actual);
+        assertArrayEquals(expected, actual);
     }
-    
-    public void testDuplicates(){
-        
+	
+	@Test
+    public void testDuplicates() {
+        int[] actual = {3, -1, -1, 3, 0};
+        int[] expected = {-1, -1, 0, 3, 3};
+        SelectionSort sorter = new SelectionSort();
+        actual = sorter.basicSelectionSort(actual);
+        assertArrayEquals(expected, actual);
     }
 }
